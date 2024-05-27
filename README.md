@@ -20,6 +20,11 @@ The static HTML web app is hosted on EC2 instances within a highly available and
 12. **AWS Simple Notification Service (SNS)**: for notifications related to the Auto Scaling Group activities.
 13. **Amazon Route 53**: for domain name registration and DNS management.
 
+## Repository Structure
+
+* **Deployment Script**: Contains the script for setting up the web application on the EC2 instance.
+* **Architectural Diagram**: Visual respresentation of the AWS architecture.
+  
 ## Deployment Scripts
 
 ### Initial Setup Script
