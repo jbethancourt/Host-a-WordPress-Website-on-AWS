@@ -123,9 +123,7 @@ This script is included in the launch template for the Auto Scaling Group, ensur
 sudo yum update -y
 
 # install the apache web server, enable it to start on boot, and then start the server immediately
-sudo yum install -y http
-
-d
+sudo yum install -y httpd
 sudo systemctl enable httpd 
 sudo systemctl start httpd
 
