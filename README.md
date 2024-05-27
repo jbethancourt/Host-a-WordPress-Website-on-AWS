@@ -1,4 +1,4 @@
-# Hosting a Static HTML Web App on AWS
+# Host a WordPress Website on AWS
 
 This repository contains the resources and scripts used to deploy a static HTML web app on Amazon Web Services (AWS). The project utilizes various AWS services to ensure high availability, scalability, and security for the web application.
 
