@@ -47,6 +47,42 @@ sudo yum install -y httpd
 sudo systemctl enable httpd 
 sudo systemctl start httpd
 
+# install php 8 along with several necessary extensions for wordpress to run
+sudo dnf install -y \
+php \
+php-cli \
+php-cgi \
+php-curl \
+php-mbstring \
+php-gd \
+php-mysqlnd \
+php-gettext \
+php-json \
+php-xml \
+php-fpm \
+php-intl \
+php-zip \
+php-bcmath \
+php-ctype \
+php-fileinfo \
+php-openssl \
+php-pdo \
+php-tokenizer
+
+# install the mysql version 8 community repository
+sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm 
+#
+# install the mysql server
+sudo dnf install -y mysql80-community-release-el9-1.noarch.rpm 
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+sudo dnf repolist enabled | grep "mysql.*-community.*"
+sudo dnf install -y mysql-community-server 
+#
+# start and enable the mysql server
+sudo systemctl start mysqld
+sudo systemctl enable mysqld
+![image](https://github.com/jbethancourt/Host-a-WordPress-Website-on-AWS/assets/45579396/b7c3819e-afa4-4878-a7a4-431e7bcdbb8a)
+
 # set permissions
 sudo chown -R ec2-user:apache /var/www
 sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
