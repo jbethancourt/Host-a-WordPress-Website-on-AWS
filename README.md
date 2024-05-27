@@ -6,21 +6,25 @@ This repository contains the resources and scripts used to deploy a WordPress we
 
 ## Architecture Overview
 
-The WordPress website is hosted on EC2 instances within a highly available and secure architecture that includes:
+The WordPress website is hosted on AWS within a robust and scalable architecture incorporating the following components:
 
-1. **Virtual Private Cloud (VPC)**: with public and private subnets across two Availability Zones (AZs) for fault tolerance and high availability.
-2. **Internet Gateway**: allowing communication between instances in the VPC and the internet.
-3. **Security Groups**: acting as a virtual firewall to control inbound and outbound traffic.
-4. **Public Subnets**: used for the NAT Gateway and Application Load Balancer, facilitating external access and load balancing.
-5. **Private Subnets**: for web servers to enhance security.
-6. **EC2 Instance Connect Endpoint**: for secure SSH access.
-7. **Application Load Balancer (ALB)**: with a target group to distribute incoming web traffic across multiple EC2 instances.
-8. **Auto Scaling Group (ASG)**: automatically adjusts the number of EC2 instances based on traffic, ensuring scalability and resilience.
-9. **Amazon RDS**: for a managed relational database service.
-10. **Amazon EFS**: for a scalable, elastic file storage system.
-11. **AWS Certificate Manager (ACM)**: for managing SSL/TLS certificates.
-12. **AWS Simple Notification Service (SNS)**: for notifications related to the Auto Scaling Group activities.
-13. **Amazon Route 53**: for domain name registration and DNS management.
+1. **Virtual Private Cloud (VPC)**: Configured with public and private subnets spanning across two Availability Zones (AZs) to ensure fault tolerance and high availability.
+2. **Internet Gateway**: Deployed to enable connectivity between VPC instances and the wider Internet.
+3. **Security Groups**: Implemented as a network firewall mechanism to control inbound and outbound traffic, enhancing security.
+4. **Availability Zones**: Utilized two AZs to improve system reliability and fault tolerance.
+5. **Public Subnets**: Employed for infrastructure components such as the NAT Gateway and Application Load Balancer, facilitating external access and load balancing.
+6. **EC2 Instance Connect Endpoint**: Implemented for secure connections to assets within both public and private subnets.
+7. **Private Subnets**: Web servers (EC2 instances) positioned within private subnets for enhanced security.
+8. **NAT Gateway**: Enabled instances in private subnets to access the Internet while maintaining security.
+9. **EC2 Instances**: Hosted the WordPress website on EC2 instances.
+10. **Application Load Balancer (ALB)**: Utilized for evenly distributing web traffic to an Auto Scaling Group of EC2 instances across multiple AZs.
+11. **Auto Scaling Group (ASG)**: Automatically manages EC2 instances to ensure website availability, scalability, fault tolerance, and elasticity.
+12. **GitHub**: Web files stored on GitHub for version control and collaboration.
+13. **Certificate Manager**: Secured application communications using SSL/TLS certificates.
+14. **Simple Notification Service (SNS)**: Configured to alert about activities within the Auto Scaling Group.
+15. **Route 53**: Registered the domain name and set up DNS records for the WordPress website.
+16. **Amazon EFS**: Utilized for shared file system storage.
+17. **Amazon RDS**: Employed for hosting the WordPress database.
 
 ## Repository Structure
 
