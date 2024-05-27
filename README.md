@@ -180,6 +180,8 @@ sudo service httpd restart
 4. Configure the Auto Scaling Group, Load Balancer, and other services as per the architecture.
 5. Access the web app through the Load Balancer's DNS name.
 
-## License
+## Additional Resources
+* AWS Documentation
+* Git-Hub Repository for Web files:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
